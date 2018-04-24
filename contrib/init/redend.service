@@ -1,0 +1,22 @@
+[Unit]
+Description=Reden's distributed currency daemon
+After=network.target
+
+[Service]
+User=redencore
+Group=redencore
+
+Type=forking
+PIDFile=/var/lib/redend/redend.pid
+ExecStart=/usr/bin/redend -daemon -pid=/var/lib/redend/redend.pid \
+-conf=/etc/redencore/reden.conf -datadir=/var/lib/redend -disablewallet
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target
