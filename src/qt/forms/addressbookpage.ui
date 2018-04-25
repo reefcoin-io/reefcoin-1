@@ -137,7 +137,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="../proton.qrc"/>
+  <include location="../reef.qrc"/>
  </resources>
  <connections/>
 </ui>

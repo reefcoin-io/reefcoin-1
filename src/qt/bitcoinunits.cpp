@@ -47,9 +47,9 @@ QString BitcoinUnits::name(int unit)
     {
         switch(unit)
         {
-            case PROTON: return QString("PROTON");
-            case mPROTON: return QString("mPROTON");
-            case uPROTON: return QString::fromUtf8("μPROTON");
+            case PROTON: return QString("REEF");
+            case mPROTON: return QString("mREEF");
+            case uPROTON: return QString::fromUtf8("μREEF");
             case duffs: return QString("duffs");
             default: return QString("???");
         }
@@ -58,9 +58,9 @@ QString BitcoinUnits::name(int unit)
     {
         switch(unit)
         {
-            case PROTON: return QString("tPROTON");
-            case mPROTON: return QString("mtPROTON");
-            case uPROTON: return QString::fromUtf8("μtPROTON");
+            case PROTON: return QString("tREEF");
+            case mPROTON: return QString("mtREEF");
+            case uPROTON: return QString::fromUtf8("μtREEF");
             case duffs: return QString("tduffs");
             default: return QString("???");
         }
@@ -73,10 +73,10 @@ QString BitcoinUnits::description(int unit)
     {
         switch(unit)
         {
-            case PROTON: return QString("Proton");
-            case mPROTON: return QString("Milli-Proton (1 / 1" THIN_SP_UTF8 "000)");
-            case uPROTON: return QString("Micro-Proton (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-            case duffs: return QString("Ten Nano-Proton (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case PROTON: return QString("Reef");
+            case mPROTON: return QString("Milli-Reef (1 / 1" THIN_SP_UTF8 "000)");
+            case uPROTON: return QString("Micro-Reef (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case duffs: return QString("Ten Nano-Reef (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             default: return QString("???");
         }
     }
@@ -84,10 +84,10 @@ QString BitcoinUnits::description(int unit)
     {
         switch(unit)
         {
-            case PROTON: return QString("TestProtons");
-            case mPROTON: return QString("Milli-TestProton (1 / 1" THIN_SP_UTF8 "000)");
-            case uPROTON: return QString("Micro-TestProton (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-            case duffs: return QString("Ten Nano-TestProton (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case PROTON: return QString("TestReefs");
+            case mPROTON: return QString("Milli-TestReef (1 / 1" THIN_SP_UTF8 "000)");
+            case uPROTON: return QString("Micro-TestReef (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case duffs: return QString("Ten Nano-TestReef (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             default: return QString("???");
         }
     }

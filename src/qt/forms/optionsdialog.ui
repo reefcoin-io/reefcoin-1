@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>576</width>
-    <height>402</height>
+    <height>481</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -33,7 +33,7 @@
           <string>Automatically start Proton Core after logging in to the system.</string>
          </property>
          <property name="text">
-          <string>&amp;Start Proton Core on system login</string>
+          <string>&amp;Start Reef Core on system login</string>
          </property>
         </widget>
        </item>

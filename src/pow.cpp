@@ -81,7 +81,7 @@ unsigned int static KimotoGravityWell(const CBlockIndex* pindexLast, const Conse
 }
 
 unsigned int static DarkGravityWave(const CBlockIndex* pindexLast, const Consensus::Params& params) {
-    /* current difficulty formula, proton - DarkGravity v3, written by Evan Duffield - evan@protoncoin.io */
+    /* current difficulty formula, reden - DarkGravity v3, written by Evan Duffield - evan@redencoin.io */
     const CBlockIndex *BlockLastSolved = pindexLast;
     const CBlockIndex *BlockReading = pindexLast;
     int64_t nActualTimespan = 0;
@@ -142,12 +142,12 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
 
     // mainnet/regtest share a configuration
     if (Params().NetworkIDString() == CBaseChainParams::MAIN || Params().NetworkIDString() == CBaseChainParams::REGTEST) {
-        if (pindexLast->nHeight + 1 >= 2075) retarget = DIFF_DGW;
-        else retarget = DIFF_BTC;
+        if (pindexLast->nHeight + 1 >= 101) retarget = DIFF_DGW;
+        else retarget = DIFF_DGW;
     // testnet -- we want a lot of coins in existance early on 
     } else {
         if (pindexLast->nHeight + 1 >= 3000) retarget = DIFF_DGW;
-        else retarget = DIFF_BTC;
+        else retarget = DIFF_DGW;
     }
 
     // Default Bitcoin style retargeting
@@ -208,7 +208,7 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
 // for DIFF_BTC only!
 unsigned int CalculateNextWorkRequired(const CBlockIndex* pindexLast, int64_t nFirstBlockTime, const Consensus::Params& params)
 {
-    if (params.fPowNoRetargeting)
+    if (params.fPowNoRetargeting || pindexLast->nHeight < 100)
         return pindexLast->nBits;
 
     // Limit adjustment step
