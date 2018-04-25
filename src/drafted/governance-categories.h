@@ -4,15 +4,15 @@
 
 	* means the category has an associated class
 	
-	CRedenNetwork: REDEN NETWORK (ROOT)
+	CReefNetwork: REDEN NETWORK (ROOT)
 	has:
 		vector<CNetworkVariable> vecNetworkVariables;
-		vector<CRedenProject> vecProjects;
+		vector<CReefProject> vecProjects;
 		vector<CGovernanceObject> vecProposals;
 		vector<CBudgetContract> vecContracts;
 		vector<CBudgetUsers> vecUsers;
 
-	CRedenProject:
+	CReefProject:
 	has:
 		name
 		employees

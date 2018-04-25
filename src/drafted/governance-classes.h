@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2018 The Reden Core developers
+// Copyright (c) 2014-2018 The Reef Core developers
 
 /*
  * FIELDS AND CLASSIFICATION
@@ -45,7 +45,7 @@
  * =========================
  *
  *   // network
- *   CRedenNetwork lvl, network-type, network-status, network-error, milestone-status*
+ *   CReefNetwork lvl, network-type, network-status, network-error, milestone-status*
  *   CCategory lvl, category-type, status, status-error
  *   CNetworkGlobalVariable lvl, global-type, status, status-error
  *   // base: actor
@@ -117,7 +117,7 @@ private:
     int nLevel;
     std::string strCategory;
 
-    // Current OBJECT STATUS (see http://govman.redencoin.info/index.php/Documentation_:_Status_Field)
+    // Current OBJECT STATUS (see http://govman.reefcoin.info/index.php/Documentation_:_Status_Field)
     int nStatusID;
     std::string strStatusMessage;
 
@@ -130,7 +130,7 @@ public:
 };
 
 // // root node
-class CRedenNetwork : public CGovernanceObject
+class CReefNetwork : public CGovernanceObject
 {
 private:
     std::string strName;
@@ -138,7 +138,7 @@ private:
 
 
 public:
-    CRedenNetwork(UniValue objIn)
+    CReefNetwork(UniValue objIn)
     {
         strName = objIn["name"].get_str();
         strURL = objIn["name"].get_str();
@@ -174,9 +174,9 @@ public:
 
 };
 
-// // can be under: RedenNetwork
+// // can be under: ReefNetwork
 // //   -- signature requirements : Key1(User)
-// class CRedenNetworkVariable : public CGovernanceObject
+// class CReefNetworkVariable : public CGovernanceObject
 // {
 // private:
 
@@ -279,7 +279,7 @@ public:
 //     // isRootCategory()
 //     // {
 //     //     // root categories won't have categories as parents
-//     //     return (IsType() == RedenNetwork);
+//     //     return (IsType() == ReefNetwork);
 //     // }
 
 //     // isSubcategoryOf(std::string strParentName)

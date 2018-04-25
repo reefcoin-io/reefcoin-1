@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2018 The Reden Core developers
+// Copyright (c) 2014-2018 The Reef Core developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -352,7 +352,7 @@ private:
 
     void CompletedTransaction(PoolMessage nMessageID);
 
-    /// Get the denominations for a specific amount of reden.
+    /// Get the denominations for a specific amount of reef.
     int GetDenominationsByAmounts(const std::vector<CAmount>& vecAmount);
 
     std::string GetMessageByID(PoolMessage nMessageID);

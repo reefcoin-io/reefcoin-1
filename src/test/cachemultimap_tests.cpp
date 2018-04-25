@@ -1,8 +1,8 @@
-// Copyright (c) 2014-2018 The Reden Core developers
+// Copyright (c) 2014-2018 The Reef Core developers
 
 #include "cachemultimap.h"
 
-#include "test/test_reden.h"
+#include "test/test_reef.h"
 
 #include <algorithm>
 #include <iostream>

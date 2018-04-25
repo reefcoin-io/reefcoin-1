@@ -1,5 +1,5 @@
-/* src/config/reden-config.h.  Generated from reden-config.h.in by configure.  */
-/* src/config/reden-config.h.in.  Generated from configure.ac by autoheader.  */
+/* src/config/reef-config.h.  Generated from reef-config.h.in by configure.  */
+/* src/config/reef-config.h.in.  Generated from configure.ac by autoheader.  */
 
 #ifndef REEF_CONFIG_H
 
@@ -27,10 +27,10 @@
 #define COPYRIGHT_HOLDERS "The %s developers"
 
 /* Copyright holder(s) */
-#define COPYRIGHT_HOLDERS_FINAL "The Reden Core developers"
+#define COPYRIGHT_HOLDERS_FINAL "The Reef Core developers"
 
 /* Replacement for %s in copyright holders string */
-#define COPYRIGHT_HOLDERS_SUBSTITUTION "Reden Core"
+#define COPYRIGHT_HOLDERS_SUBSTITUTION "Reef Core"
 
 /* Copyright year */
 #define COPYRIGHT_YEAR 2018
@@ -350,16 +350,16 @@
 #define LT_OBJDIR ".libs/"
 
 /* Define to the address where bug reports for this package should be sent. */
-#define PACKAGE_BUGREPORT "https://github.com/redencoin/redencoin/issues"
+#define PACKAGE_BUGREPORT "https://github.com/reefcoin/reefcoin/issues"
 
 /* Define to the full name of this package. */
-#define PACKAGE_NAME "Reden Core"
+#define PACKAGE_NAME "Reef Core"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "Reden Core 2.0.0"
+#define PACKAGE_STRING "Reef Core 2.0.0"
 
 /* Define to the one symbol short name of this package. */
-#define PACKAGE_TARNAME "redencore"
+#define PACKAGE_TARNAME "reefcore"
 
 /* Define to the home page for this package. */
 #define PACKAGE_URL ""
