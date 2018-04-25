@@ -133,7 +133,7 @@ public:
         //////////////
                 // calculate Genesis Block
                 // Reset genesis
-                 */
+
             consensus.hashGenesisBlock = uint256S("0x");
                 std::cout << std::string("Begin calculating Mainnet Genesis Block:\n");
                 if (true && (genesis.GetHash() != consensus.hashGenesisBlock)) {
@@ -171,9 +171,37 @@ public:
                     // Mainnet --- nonce: 296277 time: 1390095618 hash: 000000bdd771b14e5a031806292305e563956ce2584278de414d9965f6ab54b0
                 }
                 std::cout << std::string("Finished calculating Mainnet Genesis Block:\n");
-
-	    assert(consensus.hashGenesisBlock == uint256S("00000af6af43e3978dbdf86e6db210dc1ce344d19c3ee44ef73a9a2767cf3c0d"));
-        assert(genesis.hashMerkleRoot == uint256S("80550bc3cb3f76b0ba8b830062191becbab21f0220ca6005578d86454dea17e1"));
+  **/
+        if(genesis.GetHash() != uint256S("0x"))
+        {
+            bool fNegative;
+            bool fOverflow;
+            arith_uint256 bigNum;
+            printf("Searching for genesis block...\n");
+            bigNum.SetCompact(genesis.nBits, &fNegative, &fOverflow);
+            while(UintToArith256(genesis.GetHash()) > bigNum)
+            {
+                ++genesis.nNonce;
+                if (genesis.nNonce == 0)
+                {
+                    printf("NONCE WRAPPED, incrementing time");
+                    std::cout << std::string("NONCE WRAPPED, incrementing time:\n");
+                    ++genesis.nTime;
+                }
+                if (genesis.nNonce % 10000 == 0)
+                {
+                    printf("Mainnet: nonce %08u: hash = %s \n", genesis.nNonce, genesis.GetHash().ToString().c_str());
+                }
+            }
+            printf("block.nBits = %u \n", genesis.nBits);
+            printf("block.nTime = %u \n", genesis.nTime);
+            printf("block.nNonce = %u \n", genesis.nNonce);
+            printf("block.GetHash = %s\n", genesis.GetHash().ToString().c_str());
+            printf("block.GetHash = %s\n", genesis.GetHash().GetHex().c_str());
+            printf("block.Merkleroot = %s\n", genesis.hashMerkleRoot.ToString().c_str());
+        }
+	    assert(consensus.hashGenesisBlock == uint256S("0x00000af6af43e3978dbdf86e6db210dc1ce344d19c3ee44ef73a9a2767cf3c0d"));
+        assert(genesis.hashMerkleRoot == uint256S("0x80550bc3cb3f76b0ba8b830062191becbab21f0220ca6005578d86454dea17e1"));
         //assert(consensus.hashGenesisBlock == uint256S("0x00000ebbb35778a844e9b528dfe57229fde1000a16ab98f42ef410fd82998933"));
         //assert(genesis.hashMerkleRoot ==    uint256S("0x80550bc3cb3f76b0ba8b830062191becbab21f0220ca6005578d86454dea17e1"));
 
