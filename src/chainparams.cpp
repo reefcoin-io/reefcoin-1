@@ -121,7 +121,7 @@ public:
 
         //genesis = CreateGenesisBlock(1523764584, 360505, 0x1e0ffff0, 1, 50 * COIN);
         uint32_t nTime = 1524039463;
-        uint32_t nNonce = 2759422;
+        uint32_t nNonce = 86330;
         uint32_t nBits = 504365040;
         int32_t nVersion = 1;
         const CAmount& genesisReward = 50 * COIN;
@@ -170,8 +170,8 @@ public:
                 }
                 std::cout << std::string("Finished calculating Mainnet Genesis Block:\n");
 
-	//assert(consensus.hashGenesisBlock == uint256S("00000a8144601b679fc258d5aba342076e89e81573676eda958f75ff0a0a8561"));
-      //  assert(genesis.hashMerkleRoot == uint256S("b45ba0de34d2c0f9440de4f7bbbda79989a0d41757f5e145aab55cf386d15e80"));
+	    assert(consensus.hashGenesisBlock == uint256S("0x00000ebbb35778a844e9b528dfe57229fde1000a16ab98f42ef410fd82998933"));
+        assert(genesis.hashMerkleRoot == uint256S("0x80550bc3cb3f76b0ba8b830062191becbab21f0220ca6005578d86454dea17e1"));
 
 
         vSeeds.push_back(CDNSSeedData("seed1", "seed1.reefcoin.io"));
