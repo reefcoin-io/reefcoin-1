@@ -46,7 +46,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
  */
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-    const char* pszTimestamp = "4/21/2018 iodev regrets the day he scammed the EDEN community";
+    const char* pszTimestamp = "Reef Coin launches on April 25, 2018";
     const CScript genesisOutputScript = CScript() << ParseHex("040a3ada5ba6280b99f49a92ba47221e6a72af844ec49d0c8bbdae1ec09a4c79b22e42eefe670ae04490556f91780eb57de76493d020c91d0c421c2fa052b28a2b") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
@@ -115,7 +115,7 @@ public:
         pchMessageStart[2] = 0x9c;
         pchMessageStart[3] = 0xd5;
         vAlertPubKey = ParseHex("044513449073a8efe161dc42e7c07c61c4a8f59297dc8ebacbc2f77345084d058399022bc6a0db0719739f183d14b04893fb78c3b9bd9a3f88ecf8ea06adae99fe");
-        nDefaultPort = 13058;
+        nDefaultPort = 23058;
         nMaxTipAge = 1.5 * 60 * 60; // ~36 blocks behind -> 2 x fork detection time, was 24 * 60 * 60 in bitcoin
         nPruneAfterHeight = 100000;
 
@@ -126,7 +126,8 @@ public:
         //////////////
                 // calculate Genesis Block
                 // Reset genesis
-                consensus.hashGenesisBlock = uint256S("0x");
+                 */
+            consensus.hashGenesisBlock = uint256S("0x");
                 std::cout << std::string("Begin calculating Mainnet Genesis Block:\n");
                 if (true && (genesis.GetHash() != consensus.hashGenesisBlock)) {
                     LogPrintf("Calculating Mainnet Genesis Block:\n");
@@ -161,9 +162,9 @@ public:
                     // Mainnet --- nonce: 296277 time: 1390095618 hash: 000000bdd771b14e5a031806292305e563956ce2584278de414d9965f6ab54b0
                 }
                 std::cout << std::string("Finished calculating Mainnet Genesis Block:\n");
-     */   
-	assert(consensus.hashGenesisBlock == uint256S("00000a8144601b679fc258d5aba342076e89e81573676eda958f75ff0a0a8561"));
-        assert(genesis.hashMerkleRoot == uint256S("b45ba0de34d2c0f9440de4f7bbbda79989a0d41757f5e145aab55cf386d15e80"));
+
+	//assert(consensus.hashGenesisBlock == uint256S("00000a8144601b679fc258d5aba342076e89e81573676eda958f75ff0a0a8561"));
+      //  assert(genesis.hashMerkleRoot == uint256S("b45ba0de34d2c0f9440de4f7bbbda79989a0d41757f5e145aab55cf386d15e80"));
 
 	//genesis = CreateGenesisBlock(1504653953, 0, 0x1d00ffff, 1, 50 * COIN);
 	//genesis = CreateGenesisBlock(1523513141, 25449000, 0x1e00ffff, 4, 50 * COIN);
@@ -175,8 +176,8 @@ public:
         //vSeeds.push_back(CDNSSeedData("redencoin1", "seed1.redencoin.info"));
         //vSeeds.push_back(CDNSSeedData("redencoin2", "seed2.redencoin.info"));
         //vSeeds.push_back(CDNSSeedData("redencoin3", "seed3.redencoin.info"));
-        vSeeds.push_back(CDNSSeedData("beardseed2", "redenseed2.bunkens.be"));
-        vSeeds.push_back(CDNSSeedData("beardseed1", "redenseed1.bunkens.be"));
+        vSeeds.push_back(CDNSSeedData("seed1", "seed1.reefcoin.io"));
+        vSeeds.push_back(CDNSSeedData("seed2", "seed2.reefcoin.io"));
 	
 	//vSeeds.clear();
 	//vFixedSeeds.clear();
@@ -279,7 +280,7 @@ public:
         pchMessageStart[2] = 0x7d;
         pchMessageStart[3] = 0xd6;
         vAlertPubKey = ParseHex("04f9e05c65b8cf20e31464d7f35504b62999f845c9242bc6b1bcd1993c643e3ca40527a13de58afa831dccdeacae82b39c01602daf3a7f4151032f5dacefa36932");
-        nDefaultPort = 17717;
+        nDefaultPort = 23717;
         nMaxTipAge = 0x7fffffff; // allow mining on top of old blocks for testnet
         nPruneAfterHeight = 1000;
 
@@ -377,7 +378,7 @@ public:
         pchMessageStart[2] = 0x5e;
         pchMessageStart[3] = 0xd7;
         nMaxTipAge = 6 * 60 * 60; // ~144 blocks behind -> 2 x fork detection time, was 24 * 60 * 60 in bitcoin
-        nDefaultPort = 17617;
+        nDefaultPort = 23617;
         nPruneAfterHeight = 1000;
 
         genesis = CreateGenesisBlock(1513814400, 3, 0x207fffff, 1, 50 * COIN);
