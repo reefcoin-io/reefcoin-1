@@ -172,6 +172,8 @@ public:
 
 	    //assert(consensus.hashGenesisBlock == uint256S("0x00000ebbb35778a844e9b528dfe57229fde1000a16ab98f42ef410fd82998933"));
         //assert(genesis.hashMerkleRoot == uint256S("0x80550bc3cb3f76b0ba8b830062191becbab21f0220ca6005578d86454dea17e1"));
+        //assert(consensus.hashGenesisBlock == uint256S("0x00000ebbb35778a844e9b528dfe57229fde1000a16ab98f42ef410fd82998933"));
+        //assert(genesis.hashMerkleRoot ==    uint256S("0x80550bc3cb3f76b0ba8b830062191becbab21f0220ca6005578d86454dea17e1"));
 
 
         vSeeds.push_back(CDNSSeedData("seed1", "seed1.reefcoin.io"));
