@@ -1,5 +1,5 @@
-/* src/config/reef-config.h.  Generated from reef-config.h.in by configure.  */
-/* src/config/reef-config.h.in.  Generated from configure.ac by autoheader.  */
+/* src/config/reden-config.h.  Generated from reden-config.h.in by configure.  */
+/* src/config/reden-config.h.in.  Generated from configure.ac by autoheader.  */
 
 #ifndef REEF_CONFIG_H
 
