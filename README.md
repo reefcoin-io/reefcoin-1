@@ -1,32 +1,33 @@
-
-Reef Core 0.9.0
+Proton Core 2.0.0
 ===============================
 
-https://reefcoin.io
+`master:` [![Build Status](https://travis-ci.org/protoncoin/protoncoin.svg?branch=master)](https://travis-ci.org/protoncoin/protoncoin)
+
+https://protoncoin.io
 
 
-What is Reef?
+What is Proton?
 ----------------
 
-ReefCoin is a fully decentralised cryptocurrency built on the premise of providing anonymity, speed, fair mining by being ASIC-resistant and reliability by the usage of Masternodes.
+ProtonCoin is a fully decentralised cryptocurrency built on the premise of providing anonymity, speed, fair mining by being ASIC-resistant and reliability by the usage of Masternodes.
 
 
 For more information, as well as an immediately usable, binary version of
-the Reef Core software, see https://reefcoin.io
+the Proton Core software, see https://protoncoin.io.
 
 
 License
 -------
 
-Reef Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
+Proton Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
 information or see https://opensource.org/licenses/MIT.
 
 Development Process
 -------------------
 
-The `master` branch is meant to be stable. Development is normally done in separate bran
-[Tags](https://github.com/reefcore/reefcoin/tags) are created to indicate new official,l.0.0
-stable release versions of Reef Core.
+The `master` branch is meant to be stable. Development is normally done in separate branches.
+[Tags](https://github.com/protoncoin/protoncoin/tags) are created to indicate new official,
+stable release versions of Proton Core.
 
 The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md).
 

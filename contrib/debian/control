@@ -1,8 +1,8 @@
-Source: reden
+Source: proton
 Section: utils
 Priority: optional
-Maintainer: Holger Schinzel <holger@redencoin.info>
-Uploaders: Holger Schinzel <holger@redencoin.info>
+Maintainer: Holger Schinzel <holger@protoncoin.info>
+Uploaders: Holger Schinzel <holger@protoncoin.info>
 Build-Depends: debhelper,
  devscripts,
  automake,
@@ -24,45 +24,45 @@ Build-Depends: debhelper,
  libprotobuf-dev, protobuf-compiler,
  python
 Standards-Version: 3.9.2
-Homepage: https://redencoin.io/
-Vcs-Git: git://github.com/redencoin/redencoin.git
-Vcs-Browser: https://github.com/redencoin/redencoin
+Homepage: https://protoncoin.io/
+Vcs-Git: git://github.com/protoncoin/protoncoin.git
+Vcs-Browser: https://github.com/protoncoin/protoncoin
 
-Package: redend
+Package: protond
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - daemon
- Reden is an experimental new digital currency that enables anonymous, instant
- payments to anyone, anywhere in the world. Reden uses peer-to-peer
+ Proton is an experimental new digital currency that enables anonymous, instant
+ payments to anyone, anywhere in the world. Proton uses peer-to-peer
  technology to operate with no central authority: managing transactions
- and issuing money are carried out collectively by the network. Reden Core
+ and issuing money are carried out collectively by the network. Proton Core
  is the name of the open source software which enables the use of this currency.
  .
- This package provides the daemon, redend, and the CLI tool
- reden-cli to interact with the daemon.
+ This package provides the daemon, protond, and the CLI tool
+ proton-cli to interact with the daemon.
 
-Package: reden-qt
+Package: proton-qt
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - Qt GUI
- Reden is an experimental new digital currency that enables anonymous, instant
- payments to anyone, anywhere in the world. Reden uses peer-to-peer
+ Proton is an experimental new digital currency that enables anonymous, instant
+ payments to anyone, anywhere in the world. Proton uses peer-to-peer
  technology to operate with no central authority: managing transactions
- and issuing money are carried out collectively by the network. Reden Core
+ and issuing money are carried out collectively by the network. Proton Core
  is the name of the open source software which enables the use of this currency.
  .
- This package provides Reden-Qt, a GUI for Reden based on Qt.
+ This package provides Proton-Qt, a GUI for Proton based on Qt.
 
-Package: reden-tx
+Package: proton-tx
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer digital currency - standalone transaction tool
- Reden is an experimental new digital currency that enables anonymous, instant
- payments to anyone, anywhere in the world. Reden uses peer-to-peer
+ Proton is an experimental new digital currency that enables anonymous, instant
+ payments to anyone, anywhere in the world. Proton uses peer-to-peer
  technology to operate with no central authority: managing transactions
- and issuing money are carried out collectively by the network. Reden Core
+ and issuing money are carried out collectively by the network. Proton Core
  is the name of the open source software which enables the use of this currency.
  .
- This package provides reden-tx, a command-line transaction creation
- tool which can be used without a reden daemon.  Some means of
+ This package provides proton-tx, a command-line transaction creation
+ tool which can be used without a proton daemon.  Some means of
  exchanging minimal transaction data with peers is still required.
