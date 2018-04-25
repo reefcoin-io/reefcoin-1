@@ -119,7 +119,14 @@ public:
         nMaxTipAge = 1.5 * 60 * 60; // ~36 blocks behind -> 2 x fork detection time, was 24 * 60 * 60 in bitcoin
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1523764584, 360505, 0x1e0ffff0, 1, 50 * COIN);
+        //genesis = CreateGenesisBlock(1523764584, 360505, 0x1e0ffff0, 1, 50 * COIN);
+        uint32_t nTime = 1524039463;
+        uint32_t nNonce = 2759422;
+        uint32_t nBits = 504365040;
+        int32_t nVersion = 1;
+        const CAmount& genesisReward = 50 * COIN;
+        //const CAmount& genesisReward = 5000 * COIN;
+        genesis = CreateGenesisBlock(nTime, nNonce, nBits, nVersion, genesisReward);
         consensus.hashGenesisBlock = genesis.GetHash();
    /*
 	 //////////////
@@ -166,16 +173,7 @@ public:
 	//assert(consensus.hashGenesisBlock == uint256S("00000a8144601b679fc258d5aba342076e89e81573676eda958f75ff0a0a8561"));
       //  assert(genesis.hashMerkleRoot == uint256S("b45ba0de34d2c0f9440de4f7bbbda79989a0d41757f5e145aab55cf386d15e80"));
 
-	//genesis = CreateGenesisBlock(1504653953, 0, 0x1d00ffff, 1, 50 * COIN);
-	//genesis = CreateGenesisBlock(1523513141, 25449000, 0x1e00ffff, 4, 50 * COIN);
-	//consensus.hashGenesisBlock = genesis.GetHash();
-        //printf("%s\n", consensus.hashGenesisBlock.ToString().c_str());
-        //printf("%s\n", genesis.hashMerkleRoot.ToString().c_str());
-        //assert(consensus.hashGenesisBlock == uint256S("a51381143c954ecdd9584989a01b37e673867a11309f592dbe6fc2ab92a160f2"));
-        //assert(genesis.hashMerkleRoot == uint256S("a71192f5fff635cd240db0f34a5662de6ba73787f96d6bf29e527b2f79272737"));
-        //vSeeds.push_back(CDNSSeedData("reefcoin1", "seed1.reefcoin.info"));
-        //vSeeds.push_back(CDNSSeedData("reefcoin2", "seed2.reefcoin.info"));
-        //vSeeds.push_back(CDNSSeedData("reefcoin3", "seed3.reefcoin.info"));
+
         vSeeds.push_back(CDNSSeedData("seed1", "seed1.reefcoin.io"));
         vSeeds.push_back(CDNSSeedData("seed2", "seed2.reefcoin.io"));
 	
