@@ -162,7 +162,7 @@ public:
                         }
                     }
                     std::cout << "Mainnet ---\n";
-                     
+
                     std::cout << "  nBits: " << genesis.nBits <<  "\n";
                     std::cout << "  nonce: " << genesis.nNonce <<  "\n";
                     std::cout << "   time: " << genesis.nTime << "\n";
@@ -172,8 +172,8 @@ public:
                 }
                 std::cout << std::string("Finished calculating Mainnet Genesis Block:\n");
 
-	    assert(consensus.hashGenesisBlock == uint256S("0x00000af6af43e3978dbdf86e6db210dc1ce344d19c3ee44ef73a9a2767cf3c0d"));
-        //assert(genesis.hashMerkleRoot == uint256S("0x80550bc3cb3f76b0ba8b830062191becbab21f0220ca6005578d86454dea17e1"));
+	    assert(consensus.hashGenesisBlock == uint256S("00000af6af43e3978dbdf86e6db210dc1ce344d19c3ee44ef73a9a2767cf3c0d"));
+        assert(genesis.hashMerkleRoot == uint256S("80550bc3cb3f76b0ba8b830062191becbab21f0220ca6005578d86454dea17e1"));
         //assert(consensus.hashGenesisBlock == uint256S("0x00000ebbb35778a844e9b528dfe57229fde1000a16ab98f42ef410fd82998933"));
         //assert(genesis.hashMerkleRoot ==    uint256S("0x80550bc3cb3f76b0ba8b830062191becbab21f0220ca6005578d86454dea17e1"));
 
