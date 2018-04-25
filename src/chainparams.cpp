@@ -121,7 +121,7 @@ public:
 
         //genesis = CreateGenesisBlock(1523764584, 360505, 0x1e0ffff0, 1, 50 * COIN);
         uint32_t nTime = 1524656276;
-        uint32_t nNonce = 86330;
+        uint32_t nNonce = 487219;
         uint32_t nBits = 504365040;
         int32_t nVersion = 1;
         const CAmount& genesisReward = 50 * COIN;
@@ -162,6 +162,8 @@ public:
                         }
                     }
                     std::cout << "Mainnet ---\n";
+                     
+                    std::cout << "  nBits: " << genesis.nBits <<  "\n";
                     std::cout << "  nonce: " << genesis.nNonce <<  "\n";
                     std::cout << "   time: " << genesis.nTime << "\n";
                     std::cout << "   hash: " << genesis.GetHash().ToString().c_str() << "\n";
@@ -170,7 +172,7 @@ public:
                 }
                 std::cout << std::string("Finished calculating Mainnet Genesis Block:\n");
 
-	    //assert(consensus.hashGenesisBlock == uint256S("0x00000ebbb35778a844e9b528dfe57229fde1000a16ab98f42ef410fd82998933"));
+	    assert(consensus.hashGenesisBlock == uint256S("0x00000af6af43e3978dbdf86e6db210dc1ce344d19c3ee44ef73a9a2767cf3c0d"));
         //assert(genesis.hashMerkleRoot == uint256S("0x80550bc3cb3f76b0ba8b830062191becbab21f0220ca6005578d86454dea17e1"));
         //assert(consensus.hashGenesisBlock == uint256S("0x00000ebbb35778a844e9b528dfe57229fde1000a16ab98f42ef410fd82998933"));
         //assert(genesis.hashMerkleRoot ==    uint256S("0x80550bc3cb3f76b0ba8b830062191becbab21f0220ca6005578d86454dea17e1"));
