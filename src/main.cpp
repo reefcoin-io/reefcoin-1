@@ -1761,6 +1761,100 @@ CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params&
     return fSuperblockPartOnly ? 0 : nSubsidy;
 }
 
+
+
+/**
+int64_t GetBlockValue(int nHeight)
+{
+
+
+   // SerfyWerfy-
+    //Since we didn't do masternode payments until after slow start, this caused PoW mining to jump down from a reward of 50 to 40.
+    // If we had to do it all over again, this should be 40 rather than 50.
+    //
+
+    CAmount nSubsidy = 0;
+    CAmount nSlowSubsidy = 50 * COIN;
+
+    if (Params().NetworkID() == CBaseChainParams::TESTNET) {
+        // Testnet (New parameters - Feb-2018) -SerfyWerfy
+        if (nHeight < 500)
+            return 100000 * COIN;
+    }
+
+    // POW Year 0
+    if (nHeight == 0) {
+        nSubsidy = 489720.00 * COIN;
+    } else if (nHeight < Params().RAMP_TO_BLOCK() / 2) {
+        nSlowSubsidy /= Params().RAMP_TO_BLOCK();
+        nSlowSubsidy *= nHeight;
+    } else if (nHeight < Params().RAMP_TO_BLOCK()) {
+        nSlowSubsidy /= Params().RAMP_TO_BLOCK();
+        nSlowSubsidy *= nHeight;
+    } else if (nHeight <= 86399 && nHeight >= Params().RAMP_TO_BLOCK()) {
+        nSubsidy = 50 * COIN;
+    } else if (nHeight <= 172799 && nHeight >= 86400) {
+        nSubsidy = 43.75 * COIN;
+    } else if (nHeight <= 259199 && nHeight >= 172800) {
+        nSubsidy = 37.5 * COIN;
+    } else if (nHeight <= Params().LAST_POW_BLOCK() && nHeight >= 259200) {
+        nSubsidy = 31.25 * COIN;
+
+        // POS Year 1
+    } else if (nHeight <= 431999 && nHeight > Params().LAST_POW_BLOCK()) {
+        nSubsidy = 25 * COIN;
+    } else if (nHeight <= 518399 && nHeight >= 432000) {
+        nSubsidy = 21.875 * COIN;
+    } else if (nHeight <= 604799 && nHeight >= 518400) {
+        nSubsidy = 18.750 * COIN;
+    } else if (nHeight <= 691199 && nHeight >= 604800) {
+        nSubsidy = 15.625 * COIN;
+
+        // POS Year 2
+    } else if (nHeight <= 777599 && nHeight >= 691200) {
+        nSubsidy = 12.50 * COIN;
+    } else if (nHeight <= 863999 && nHeight >= 777600) {
+        nSubsidy = 10.938 * COIN;
+    } else if (nHeight <= 950399 && nHeight >= 864000) {
+        nSubsidy = 9.375 * COIN;
+    } else if (nHeight <= 1036799 && nHeight >= 950400) {
+        nSubsidy = 7.812 * COIN;
+
+        // POS Year 3
+    } else if (nHeight <= 1123199 && nHeight >= 1036800) {
+        nSubsidy = 6.250 * COIN;
+    } else if (nHeight <= 1209599 && nHeight >= 1123200) {
+        nSubsidy = 5.469 * COIN;
+    } else if (nHeight <= 1295999 && nHeight >= 1209600) {
+        nSubsidy = 4.688 * COIN;
+    } else if (nHeight <= 1382399 && nHeight >= 1296000) {
+        nSubsidy = 3.906 * COIN;
+
+        // POS Year 4
+    } else if (nHeight <= 1468799 && nHeight >= 1382400) {
+        nSubsidy = 3.125 * COIN;
+    } else if (nHeight <= 1555199 && nHeight >= 1468800) {
+        nSubsidy = 2.734 * COIN;
+    } else if (nHeight <= 1641599 && nHeight >= 1555200) {
+        nSubsidy = 2.344 * COIN;
+    } else if (nHeight <= 1727999 && nHeight >= 1641600) {
+        nSubsidy = 1.953 * COIN;
+
+    } else if (nHeight > 1728000) {
+        nSubsidy = 1.625 * COIN;
+    } else {
+        nSubsidy = 0 * COIN;
+    }
+
+    // Make sure we return the correct nSubsidy value -Serfywerfy
+    if (nHeight >= Params().RAMP_TO_BLOCK())
+        return nSubsidy;
+    else
+        return nSlowSubsidy;
+}
+*/
+
+
 CAmount GetMasternodePayment(int nHeight, CAmount blockValue)
 {
     return blockValue * 0.40;
