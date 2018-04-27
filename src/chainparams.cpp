@@ -211,8 +211,8 @@ public:
         };*/
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            ( 0, uint256S("00000a8144601b679fc258d5aba342076e89e81573676eda958f75ff0a0a8561")),
-            1523764584, // * UNIX timestamp of last checkpoint block
+            ( 0, uint256S("0x00000af6af43e3978dbdf86e6db210dc1ce344d19c3ee44ef73a9a2767cf3c0d")),
+            1524656276, // * UNIX timestamp of last checkpoint block
             0,          // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
             500	        // * estimated number of transactions per day after checkpoint
@@ -413,7 +413,7 @@ public:
         //genesis = CreateGenesisBlock(1513814400, 3, 0x207fffff, 1, 50 * COIN);
 
         consensus.hashGenesisBlock = genesis.GetHash();
-        if(genesis.GetHash() != uint256S("0x"))
+        /**if(genesis.GetHash() != uint256S("0x"))
         {
             bool fNegative;
             bool fOverflow;
@@ -441,9 +441,10 @@ public:
             printf("block.GetHash = %s\n", genesis.GetHash().GetHex().c_str());
             printf("block.Merkleroot = %s\n", genesis.hashMerkleRoot.ToString().c_str());
         }
+        */
 
-        //assert(consensus.hashGenesisBlock == uint256S("0x5a2bd287d108e8ae36227683cc9f47c4ed4b93a19b29684dec3b1a7189248eb4"));
-        //assert(genesis.hashMerkleRoot == uint256S("0x33a98e8f8089165dc24358b01d52dd740011bdbffad052d51d3ac3588af2f487"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00001078abba24703a279bc008f094ebd5b5447035c6b306479a4482af0dd00e"));
+        assert(genesis.hashMerkleRoot == uint256S("0x80550bc3cb3f76b0ba8b830062191becbab21f0220ca6005578d86454dea17e1"));
 
         vFixedSeeds.clear(); //! Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();  //! Regtest mode doesn't have any DNS seeds.

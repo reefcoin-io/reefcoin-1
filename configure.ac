@@ -27,9 +27,9 @@ fi
 
 AC_CANONICAL_HOST
 
-AH_TOP([#ifndef PROTON_CONFIG_H])
-AH_TOP([#define PROTON_CONFIG_H])
-AH_BOTTOM([#endif //PROTON_CONFIG_H])
+AH_TOP([#ifndef REEF_CONFIG_H])
+AH_TOP([#define REEF_CONFIG_H])
+AH_BOTTOM([#endif //REEF_CONFIG_H])
 
 dnl faketime breaks configure and is only needed for make. Disable it here.
 unset FAKETIME
@@ -441,7 +441,7 @@ case $host in
 
      AX_CHECK_LINK_FLAG([[-Wl,-headerpad_max_install_names]], [LDFLAGS="$LDFLAGS -Wl,-headerpad_max_install_names"])
      CPPFLAGS="$CPPFLAGS -DMAC_OSX"
-     OBJCXXFLAGS="$CXXFLAGS"
+     OBJCXXFLAGS="-std=c++11 $CXXFLAGS"
      ;;
    *linux*)
      TARGET_OS=linux
